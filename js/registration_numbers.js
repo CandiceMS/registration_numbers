@@ -13,7 +13,7 @@ function AddRegistrations(storageMap) {
   function mapReg(reg) {
     storeNewMap();
     if (reg == "") {
-      return;      
+      return;
     }
     if (map[reg] === undefined) {
       map[reg] = 0;

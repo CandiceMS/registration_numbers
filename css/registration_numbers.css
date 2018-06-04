@@ -23,6 +23,9 @@ output {
 .regInput {
 
 }
-.regDisplay {
-
+.displayNone {
+  display: none;
+}
+.displayReg {
+  display: inline;
 }
