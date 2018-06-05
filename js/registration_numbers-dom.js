@@ -2,28 +2,25 @@ var regInput = document.querySelector('.regInput');
 var regBtn = document.querySelector('button[name="RegBtn"]');
 //var regDisplay = document.querySelector('.displayNone');
 var clearBtn = document.querySelector('button[name="clearBtn"]');
-var output = document.createElement('output');
 var moreReg = document.querySelectorAll('div[class="row"]');
    var addLocation = moreReg[4];
 
 function add() {
   addReg.mapReg(addReg.regUpper(regInput.value));
-//  regDisplay.innerHTML = addReg.displayReg(addReg.returnMap());
-//  regDisplay.classList.add("col-3", "center");
-//  regInput.value = "";
   regInput.value = "";
+  addReg.displayReg(addReg.returnMap());
 
-  if (addReg.mapReg()) {
-    addLocation.appendChild(output);
-    output.classList.add("col-3", "center");
-    output.innerHTML = addReg.displayReg(addReg.returnMap());
-  }
-   // if (regDisplay.innerHTML = addReg.displayReg()) {
-   //   addLocation.appendChild(output);
-   // //  moreOutput.innerHTML = addReg.displayReg();
-   //   output.classList.add("col-3", "center");
-   // }
+  var data = addReg.displayReg(addReg.returnMap());
+  for (var i = 0; i < data.length; i++) {
+      var createOutput = document.createElement('output');
+      addLocation.appendChild(createOutput);
+      createOutput.classList.add("col-3", "center", "display_Reg");
+      createOutput.innerHTML = data[i];
 
+       // if (createOutput.innerHTML !== data[i]) {
+       //   createOutput.innerHTML = data[i];
+       // }
+    }
   var holdMap = addReg.returnMap();
    localStorage.setItem("localMap",JSON.stringify(holdMap));
  }

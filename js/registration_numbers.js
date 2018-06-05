@@ -1,6 +1,7 @@
 function AddRegistrations(storageMap) {
-  var map = {};
   var reg = "";
+  var map = {};
+  var mapArray = [];
   function regUpper(regInput) {
     reg = regInput.toUpperCase();
     return reg;
@@ -29,8 +30,11 @@ function AddRegistrations(storageMap) {
     return map;
   }
   function displayReg() {
-    return reg;
+    //return reg;
+    mapArray = Object.keys(map);
+    return mapArray;
   }
+
   return {
     regUpper,
     storeNewMap,
