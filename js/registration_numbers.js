@@ -34,12 +34,16 @@ function AddRegistrations(storageMap) {
     mapArray = Object.keys(map);
     return mapArray;
   }
+  function regReturn() {
+    return reg;
+  }
 
   return {
     regUpper,
     storeNewMap,
     mapReg,
     returnMap,
-    displayReg
+    displayReg,
+    regReturn
   }
 }
