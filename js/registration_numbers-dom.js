@@ -7,7 +7,8 @@ var addLocation = moreReg[4];
 function add() {
   addReg.mapReg(addReg.regUpper(regInput.value));
   regInput.value = "";
-  addReg.displayReg(addReg.returnMap());
+  addReg.returnMap();
+
   var createOutput = document.createElement('output');
   addLocation.appendChild(createOutput);
   createOutput.classList.add("col-3", "center", "display_Reg");

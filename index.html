@@ -8,23 +8,34 @@
   </head>
   <body>
     <div class="container">
-      <div class="row" style="background-color: lightblue">
+      <div class="row">
         <h1 style="color: navy">Registration Numbers</h1>
       </div>
-      <div class="row" style="background-color: pink">
+      <div class="row">
         <label for="RegInput">Please Enter A Registration Number</label>
       </div>
-      <div class="row" style="background-color: lavender">
+      <div class="row">
         <input type="text" name="RegInput" value="" class="col-4 regInput">
       </div>
-      <div class="row" style="background-color: lightgreen">
+      <div class="row">
         <button type="button" name="RegBtn" class="col-4">ADD REGISTRATION</button>
         <button type="button" name="clearBtn" class="col-3">RESET</button>
       </div>
-      <div class="row" style="background-color: grey">
-      <!-- <output name="RegResult" class="col-3 center displayNone"></output> -->
+      <div class="row dropdown">
+        <button class="dropBtn col-5">PLEASE SELECT A LOCATION</button>
+        <div class="dropdown-content">
+          <ul>
+            <li><input type="button" name="location" value="Cape Town"></li>
+            <li><input type="button" name="location" value="Port Elizabeth"></li>
+            <li><input type="button" name="location" value="Kwazulu Natal"></li>
+            <li><input type="button" name="location" value="Gauteng"></li>
+          </ul>
+        </div>
       </div>
     </div>
+    <div class="row">
+    </div>
+  </div>
   </body>
   <script src="js/registration_numbers.js" charset="utf-8"></script>
   <script src="js/registration_numbers-dom.js" charset="utf-8"></script>

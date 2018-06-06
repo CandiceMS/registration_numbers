@@ -29,11 +29,11 @@ function AddRegistrations(storageMap) {
   function returnMap() {
     return map;
   }
-  function displayReg() {
-    //return reg;
-    mapArray = Object.keys(map);
-    return mapArray;
-  }
+  // function displayReg() {
+  //   //return reg;
+  //   mapArray = Object.keys(map);
+  //   return mapArray;
+  // }
   function regReturn() {
     return reg;
   }
@@ -43,7 +43,7 @@ function AddRegistrations(storageMap) {
     storeNewMap,
     mapReg,
     returnMap,
-    displayReg,
+  //  displayReg,
     regReturn
   }
 }
