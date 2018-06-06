@@ -29,21 +29,31 @@ function AddRegistrations(storageMap) {
   function returnMap() {
     return map;
   }
-  // function displayReg() {
-  //   //return reg;
-  //   mapArray = Object.keys(map);
-  //   return mapArray;
-  // }
   function regReturn() {
     return reg;
   }
+  function findLocation(locationSelected, map) {
+  switch(locationSelected) {
+    case "Cape Town":
+      return reg.includes("CA");
+    case "Port Elizabeth":
+      return reg.includes("CB");
+    case "Gauteng":
+      return reg.includes("GP");
+    case "Kwazulu Natal":
+      return reg.includes("ZN");
+        break;
+    default:
+      return "No Registrations Found";
+    }
+  }
 
-  return {
+return {
     regUpper,
     storeNewMap,
     mapReg,
     returnMap,
-  //  displayReg,
-    regReturn
+    regReturn,
+    findLocation
   }
 }
