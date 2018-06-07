@@ -1,5 +1,6 @@
 function AddRegistrations(storageMap) {
   var reg = "";
+  var location = "";
   var map = {};
   var mapArray = [];
   function regUpper(regInput) {
@@ -11,9 +12,12 @@ function AddRegistrations(storageMap) {
       map = storageMap;
     }
   }
-  function mapReg(reg) {
+  function mapReg(reg, location) {
     storeNewMap();
-    if (reg == "") {
+    map = {
+      location: [reg];
+    }
+    if (reg == "" || location == "") {
       return;
     }
     if (map[reg] === undefined) {

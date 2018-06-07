@@ -1,10 +1,14 @@
 var regInput = document.querySelector('.regInput');
 var regBtn = document.querySelector('button[name="RegBtn"]');
 var clearBtn = document.querySelector('button[name="clearBtn"]');
+var selectFilter = document.querySelector('.locationList');
 var moreReg = document.querySelectorAll('div[class="row"]');
 var addLocation = moreReg[4];
 
 function add() {
+  // locationList.value = map.key
+  // regInput.value = map.key-value
+
   addReg.mapReg(addReg.regUpper(regInput.value));
   regInput.value = "";
   addReg.returnMap();
@@ -22,6 +26,9 @@ var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getIte
 
 var addReg = AddRegistrations(holdMap);
 addReg.storeNewMap();
+
+
+
 
 function reset() {
   localStorage.clear();
