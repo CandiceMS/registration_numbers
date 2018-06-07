@@ -32,28 +32,12 @@ function AddRegistrations(storageMap) {
   function regReturn() {
     return reg;
   }
-  function findLocation(locationSelected, map) {
-  switch(locationSelected) {
-    case "Cape Town":
-      return reg.includes("CA");
-    case "Port Elizabeth":
-      return reg.includes("CB");
-    case "Gauteng":
-      return reg.includes("GP");
-    case "Kwazulu Natal":
-      return reg.includes("ZN");
-        break;
-    default:
-      return "No Registrations Found";
-    }
-  }
 
 return {
     regUpper,
     storeNewMap,
     mapReg,
     returnMap,
-    regReturn,
-    findLocation
+    regReturn
   }
 }

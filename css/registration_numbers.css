@@ -36,25 +36,3 @@ li input {
   display: inline;
   font-size: 18px;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropBtn {
-  background-color: #C0C0C0;
-  border-radius: 4px;
-  border: 1px solid grey;
-  color: navy;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown-content input:hover {
-  background-color: #C0C0C0;
-  color: navy;
-}
