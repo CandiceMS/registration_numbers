@@ -15,7 +15,7 @@ function AddRegistrations(storageMap) {
   function mapReg(reg, location) {
     storeNewMap();
     map = {
-      location: [reg];
+      location: [reg]
     }
     if (reg == "" || location == "") {
       return;
