@@ -18,7 +18,7 @@ function add() {
   localStorage.setItem("localMap", JSON.stringify(holdMap));
 }
 
-var holdMap = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')) : {};
+var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')):{};
 
 var addReg = AddRegistrations(holdMap);
 addReg.storeNewMap();
