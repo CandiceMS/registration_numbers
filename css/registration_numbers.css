@@ -36,3 +36,25 @@ li input {
   display: inline;
   font-size: 18px;
 }
+.dropList {
+  position: relative;
+  display: inline-block;
+}
+.locateBtn {
+  border-radius: 5%;
+  border: 1px solid grey;
+  font-size: 18px;
+  height: 2.5rem;
+}
+.locationList {
+  display: none;
+}
+.dropList:hover .locationList {
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+.locationList input:hover {
+  color: navy;
+  background-color: #6495ED;
+}
