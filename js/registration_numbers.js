@@ -7,6 +7,12 @@ function AddRegistrations(storageMap) {
     reg = regInput.toUpperCase();
     return reg;
   }
+  function capitalise(location_Input) {
+    //var locationLower = location_Input.toLowerCase();
+    //location = locationLower[0].toUpperCase();
+    location = location_Input.toLowerCase();
+    return location;
+  }
   function storeNewMap() {
     if (storageMap) {
       map = storageMap;
@@ -14,24 +20,30 @@ function AddRegistrations(storageMap) {
   }
   function mapReg(reg, location) {
     storeNewMap();
-    map = {
-      location: [reg]
-    }
     if (reg == "" || location == "") {
       return;
     }
-    if (map[reg] === undefined) {
-      map[reg] = 0;
+    // var regSplit = [];
+    // if (reg.length > 1) {
+    //   var regTrim = reg.trim();
+    //   regSplit = regTrim.split(",")
+    // }    
+    if (map[location] === undefined) {
+      map[location] = [reg];
     }
-    for (var reg in map) {
-      if (map[reg] !== reg) {
-        map[reg] = 0;
-      }
+    if (map[location] === location || map[location].includes(reg)) {
+      return;
+    }
+    else {
+      map[location].push(reg);
     }
     console.log(map);
   }
   function returnMap() {
     return map;
+  }
+  function returnLocation() {
+    return location;
   }
   function regReturn() {
     return reg;
@@ -39,9 +51,11 @@ function AddRegistrations(storageMap) {
 
 return {
     regUpper,
+    capitalise,
     storeNewMap,
     mapReg,
     returnMap,
+    returnLocation,
     regReturn
   }
 }
