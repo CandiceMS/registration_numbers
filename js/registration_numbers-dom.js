@@ -4,9 +4,9 @@ var addBtn = document.querySelector('button[name="AddBtn"]');
 var clearBtn = document.querySelector('button[name="clearBtn"]');
 var locateBtn = document.querySelector('.locateBtn');
 var selectFilter = document.querySelector('.locationsAdd');
-var moreReg = document.querySelectorAll('div[class="row"]');
-var addLocation = moreReg[6];
-console.log(addLocation);
+var moreReg = document.querySelector('div[class="row divDisplay"]');
+
+console.log(moreReg);
   //moreReg[moreReg.length - 1];
 
 function add() {
@@ -18,14 +18,14 @@ function add() {
 
 //  var createUL = document.createElement('ul');
   //selectFilter.appendChild(createUL);
-  var createLI = document.createElement('li');
-  searchFilter.appendChild(createLI);
-  var createItem = createLI.createElement('input');
-  createLI.appendChild(createItem);
-  //createAttribute
-  createItem.createAttribute("type"),("name");
-  createItem.setAttribute("type", "button"), ("name", "location");
-//  createItem.value = ; // map.key
+//   var createLI = document.createElement('li');
+//   searchFilter.appendChild(createLI);
+//   var createItem = createLI.createElement('input');
+//   createLI.appendChild(createItem);
+//   //createAttribute
+//   createItem.createAttribute("type"),("name");
+//   createItem.setAttribute("type", "button"), ("name", "location");
+// //  createItem.value = ; // map.key
 }
 
 function displayOutput() {
@@ -36,10 +36,18 @@ function displayOutput() {
   locationInput.value = "";
   addReg.returnMap();
   var createOutput = document.createElement('output');
-  addLocation.appendChild(createOutput);
+  moreReg.appendChild(createOutput);
   createOutput.classList.add("col-3", "center", "display_Reg");
   createOutput.innerHTML = addReg.regReturn();
     // And location font 10px
+
+    var createLI = document.createElement('li');
+    selectFilter.appendChild(createLI);
+    var createItem = document.createElement('input');
+    createLI.appendChild(createItem);
+  //  createItem.createAttribute("type"),("name");
+    createItem.setAttribute("type", "button"), ("name", "location");
+    createItem.value = addReg.returnLocation(); // map.key
 
 
 
