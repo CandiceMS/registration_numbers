@@ -1,8 +1,7 @@
 function AddRegistrations(storageMap) {
   var reg = [];
-  var location = {};
+  var location = '';
   var map = {};
-//  var mapArray = [];
   function regUpper(regInput) {
     reg = regInput.toUpperCase();
     return reg;
@@ -39,12 +38,18 @@ function AddRegistrations(storageMap) {
     return map;
   }
   function returnLocation() {
-  //   location = Object.keys(map);
+    location = Object.keys(map);
+    //console.log(location);
     return location;
   }
   function regReturn() {
-  //  reg =
-    return reg;
+  for (var key in map) {
+    if (map[key]) {
+      reg = map[key].valueOf();
+    }
+    console.log(map[key].valueOf());
+      return reg;
+    }
   }
 
 return {

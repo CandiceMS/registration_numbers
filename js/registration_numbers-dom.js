@@ -21,23 +21,31 @@ function add() {
   locationInput.value = "";
   addReg.returnMap();
 
-  var holdMap = addReg.returnMap();
-  localStorage.setItem("localMap", JSON.stringify(holdMap));
-
-    var createOutput = document.createElement('output');
-    moreReg.appendChild(createOutput);
-    createOutput.classList.add("col-3", "center", "display_Reg");
-    createOutput.innerHTML = ;
-  }
-
-  var holdArr = Object.keys(holdMap);
-  for (var i = 0; i < holdArr.length; i++) {
-    var createLI = document.createElement('li');
+  var keyArr = addReg.returnLocation();
+  var createLI = document.createElement('li');
+  var createItem = document.createElement('input');
+  for (var i = 0; i < keyArr.length; i++) {
+    if (!createItem.innerHTML.includes(keyArr[i])) {
     selectFilter.appendChild(createLI);
-    var createItem = document.createElement('input');
     createLI.appendChild(createItem);
     createItem.setAttribute("type", "button"), ("name", "location");
-    createItem.value = holdArr[i];
+    createItem.value = keyArr[i];
+  }
+}
+var valObj = addReg.returnMap();
+var createOutput = document.createElement('output');
+for (var key in valObj) {
+  if (!createOutput.innerHTML.includes(valObj[key].valueOf())) {
+    moreReg.appendChild(createOutput);
+    createOutput.classList.add("col-3", "center", "display_Reg");
+    createOutput.innerHTML = valObj[key].valueOf();
+  }
+}
+
+
+var holdMap = addReg.returnMap();
+localStorage.setItem("localMap", JSON.stringify(holdMap));
+
 }
 
 
