@@ -5,19 +5,19 @@ describe('Add Registration Numbers', function(){
       displayOnly.regUpper('ca1234');
         assert.equal(displayOnly.regReturn(), "CA1234");
     });
-    it('should display the registration number entered in Uppercase', function(){
-      var display = AddRegistrations();
-        assert.equal(display.regReturn(display.regUpper('cB1234')), "CB1234");
+    it('should capitalise the location regardless of input format', function(){
+      var upper = AddRegistrations();
+      upper.capitalise("george");
+        assert.equal(upper.returnLocation(), "George");
     });
     it('should map the location and registration numbers entered, not repeating any.', function(){
-      var mapRegistrations = AddRegistrations();
+      var addToMap = AddRegistrations();
 
-      mapRegistrations.mapReg(mapRegistrations.regUpper('Ct908'), mapRegistrations.capitalise('Cape'));
-      mapRegistrations.mapReg(mapRegistrations.regUpper('bM12'), mapRegistrations.capitalise('CAPE'));
-      mapRegistrations.mapReg(mapRegistrations.regUpper('bM12'), mapRegistrations.capitalise('Cape'));
-        mapRegistrations.mapReg(mapRegistrations.regUpper('gh385'), mapRegistrations.capitalise('Earth'));
+      addToMap.mapReg(addToMap.regUpper('Ct908'), addToMap.capitalise('Cape'));
+      addToMap.mapReg(addToMap.regUpper('bM12'), addToMap.capitalise('CAPE'));
+      addToMap.mapReg(addToMap.regUpper('bM12'), addToMap.capitalise('Cape'));
+      addToMap.mapReg(addToMap.regUpper('gh385'), addToMap.capitalise('Earth'));
 
-
-        assert.deepEqual(mapRegistrations.returnMap(), {"cape": ["CT908", "BM12"], "earth": ["GH385"]});
+        assert.deepEqual(addToMap.returnMap(), {"Cape": ["CT908", "BM12"], "Earth": ["GH385"]});
     });
      });

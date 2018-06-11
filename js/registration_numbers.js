@@ -1,16 +1,17 @@
 function AddRegistrations(storageMap) {
-  var reg = "";
-  var location = "";
+  var reg = [];
+  var location = {};
   var map = {};
-  var mapArray = [];
+//  var mapArray = [];
   function regUpper(regInput) {
     reg = regInput.toUpperCase();
     return reg;
   }
   function capitalise(location_Input) {
-    //var locationLower = location_Input.toLowerCase();
-    //location = locationLower[0].toUpperCase();
-    location = location_Input.toLowerCase();
+    var lower = location_Input.toLowerCase();
+    location = lower.charAt(0).toUpperCase() + lower.slice(1);
+    //how to use a forEach()???
+    //how to avoid loop?
     return location;
   }
   function storeNewMap() {
@@ -23,29 +24,26 @@ function AddRegistrations(storageMap) {
     if (reg == "" || location == "") {
       return;
     }
-    // var regSplit = [];
-    // if (reg.length > 1) {
-    //   var regTrim = reg.trim();
-    //   regSplit = regTrim.split(",")
-    // }    
     if (map[location] === undefined) {
-      map[location] = [reg];
-    }
-    if (map[location] === location || map[location].includes(reg)) {
-      return;
-    }
-    else {
-      map[location].push(reg);
-    }
+     map[location] = [reg];
+   }
+   if (map[location] === location || map[location].includes(reg)) {
+     return;
+   }
+   else {
+     map[location].push(reg);
+   }
     console.log(map);
   }
   function returnMap() {
     return map;
   }
   function returnLocation() {
+  //   location = Object.keys(map);
     return location;
   }
   function regReturn() {
+  //  reg =
     return reg;
   }
 
