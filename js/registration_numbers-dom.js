@@ -6,10 +6,29 @@ var locateBtn = document.querySelector('.locateBtn');
 var selectFilter = document.querySelector('.locationsAdd');
 var moreReg = document.querySelector('div[class="row divDisplay"]');
 
-function displayFilter() {
-  regInput.value = "";
-  locationInput.value = "";
+function filterDisplay() {
+// js function to filter
+// no click event on child means parent event will be executed
+// parent event/function must be defined
+// parent event = grabs child value
+
+//display = map[key] values
 }
+function filterLocation(e) {
+  var filterLS = holdMap;
+  if (e) {
+  var targetEl =  e.target;
+  var elValue = targetEl.value;
+  console.log(targetEl);
+  console.log(elValue);
+  console.log(filterLS);
+    // if (filterLS.includes(elValue)) {
+    //   var filVal = Object.values(filterLS);
+    //   console.log(filVal);
+    // }
+  }
+  }
+
 
 function add() {
   while (selectFilter.hasChildNodes()) {
@@ -18,9 +37,7 @@ function add() {
   while (moreReg.hasChildNodes()) {
     moreReg.removeChild(moreReg.firstChild);
   }
-  // while (createLI.hasChildNodes()) {
-  //   createLI.removeChild(createLI.firstChild);
-  // }
+
   addReg.mapReg(addReg.regUpper(regInput.value), addReg.capitalise(locationInput.value));
   regInput.value = "";
   locationInput.value = "";
@@ -37,8 +54,10 @@ function add() {
       createLI.appendChild(createItem);
       createItem.setAttribute("type", "button"), ("name", "location");
       createItem.value = keyArr[i];
+    //  createItem.addEventListener('click', filterLocation);
+      //   console.log();
+       // eventListener function to be added from .js function?
     }
-
 
   var valObj = addReg.returnMap(holdMap);
   var valArr = [];
@@ -58,14 +77,10 @@ function add() {
 
 }
 
-
 var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')):{};
 
 var addReg = AddRegistrations(holdMap);
 addReg.storeNewMap();
-
-
-
 
 function reset() {
   localStorage.clear();
@@ -73,5 +88,5 @@ function reset() {
 }
 addBtn.addEventListener('click', add);
 clearBtn.addEventListener('click', reset);
-//locateBtn.addEventListener('click', displayOutput);
-// eventListener for location created to display reg
+selectFilter.addEventListener('click', filterLocation);
+//locateBtn.addEventListener('click', filterLocation);

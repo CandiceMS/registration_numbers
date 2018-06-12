@@ -32,35 +32,23 @@ function AddRegistrations(storageMap) {
    else {
      map[location].push(reg);
    }
-    console.log(map);
   }
   function returnMap() {
     return map;
   }
   function returnLocation() {
     location = Object.keys(map);
-    //console.log(location);
     return location;
   }
   function regReturn(map) {
-  //  var regArr = [];
     for (var key in map) {
       if (map[key]) {
         reg = map[key];
         return reg;
       }
     }
-
-//    console.log(map[key].valueOf());
-  // for (var key in map) {
-  //   if (map[key]) {
-  //     reg = map[key].valueOf();
-  //   }
-  //   console.log(map[key].valueOf());
-  //     return reg;
-  //
-  //  }
-    //return reg;
+    // Object.values(map);
+    //Would this do the same thing?
   }
 
 return {
@@ -70,6 +58,6 @@ return {
     mapReg,
     returnMap,
     returnLocation,
-    regReturn
+    regReturn,
   }
 }
