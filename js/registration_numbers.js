@@ -42,14 +42,25 @@ function AddRegistrations(storageMap) {
     //console.log(location);
     return location;
   }
-  function regReturn() {
-  for (var key in map) {
-    if (map[key]) {
-      reg = map[key].valueOf();
+  function regReturn(map) {
+  //  var regArr = [];
+    for (var key in map) {
+      if (map[key]) {
+        reg = map[key];
+        return reg;
+      }
     }
-    console.log(map[key].valueOf());
-      return reg;
-    }
+
+//    console.log(map[key].valueOf());
+  // for (var key in map) {
+  //   if (map[key]) {
+  //     reg = map[key].valueOf();
+  //   }
+  //   console.log(map[key].valueOf());
+  //     return reg;
+  //
+  //  }
+    //return reg;
   }
 
 return {

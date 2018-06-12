@@ -7,44 +7,54 @@ var selectFilter = document.querySelector('.locationsAdd');
 var moreReg = document.querySelector('div[class="row divDisplay"]');
 
 function displayFilter() {
-
-  // locationList.value = map.key
-  // regInput.value = map.key-value
-
   regInput.value = "";
   locationInput.value = "";
 }
 
 function add() {
+  while (selectFilter.hasChildNodes()) {
+    selectFilter.removeChild(selectFilter.firstChild);
+  }
+  while (moreReg.hasChildNodes()) {
+    moreReg.removeChild(moreReg.firstChild);
+  }
+  // while (createLI.hasChildNodes()) {
+  //   createLI.removeChild(createLI.firstChild);
+  // }
   addReg.mapReg(addReg.regUpper(regInput.value), addReg.capitalise(locationInput.value));
   regInput.value = "";
   locationInput.value = "";
   addReg.returnMap();
 
-  var keyArr = addReg.returnLocation();
-  var createLI = document.createElement('li');
-  var createItem = document.createElement('input');
-  for (var i = 0; i < keyArr.length; i++) {
-    if (!createItem.innerHTML.includes(keyArr[i])) {
-    selectFilter.appendChild(createLI);
-    createLI.appendChild(createItem);
-    createItem.setAttribute("type", "button"), ("name", "location");
-    createItem.value = keyArr[i];
-  }
-}
-var valObj = addReg.returnMap();
-var createOutput = document.createElement('output');
-for (var key in valObj) {
-  if (!createOutput.innerHTML.includes(valObj[key].valueOf())) {
-    moreReg.appendChild(createOutput);
-    createOutput.classList.add("col-3", "center", "display_Reg");
-    createOutput.innerHTML = valObj[key].valueOf();
-  }
-}
+  var holdMap = addReg.returnMap();
+  localStorage.setItem("localMap", JSON.stringify(holdMap));
+
+  var keyArr = addReg.returnLocation(holdMap);
+    for (var i = 0; i < keyArr.length; i++) {
+      var createLI = document.createElement('li');
+      var createItem = document.createElement('input');
+      selectFilter.appendChild(createLI);
+      createLI.appendChild(createItem);
+      createItem.setAttribute("type", "button"), ("name", "location");
+      createItem.value = keyArr[i];
+    }
 
 
-var holdMap = addReg.returnMap();
-localStorage.setItem("localMap", JSON.stringify(holdMap));
+  var valObj = addReg.returnMap(holdMap);
+  var valArr = [];
+  for (var key in valObj) {
+    if (valObj[key]){
+      valArr = valObj[key].valueOf();
+      for (var i = 0; i < valArr.length; i++) {
+        var createOutput = document.createElement('output');
+        moreReg.appendChild(createOutput);
+        createOutput.classList.add("col-3", "center", "display_Reg");
+        createOutput.innerHTML = valArr[i];
+      }
+    }
+  }
+
+
 
 }
 
