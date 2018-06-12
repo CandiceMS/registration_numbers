@@ -28,4 +28,8 @@ describe('Add Registration Numbers', function(){
 
       assert.deepEqual(locMap.returnLocation(), ["Earth", "Space"]);
     });
+    it('should return the values of keys in the map', function(){
+      var mapVal = AddRegistrations();
+      assert.deepEqual(mapVal.regReturn({"Home": ["HM39", "HM93"]}), ['HM39', 'HM93']);    
+    });
      });
