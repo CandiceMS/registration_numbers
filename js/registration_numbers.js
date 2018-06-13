@@ -1,14 +1,37 @@
 function AddRegistrations(storageMap) {
-  var reg = [];
+  var reg = '';
   var location = '';
   var map = {};
   function regUpper(regInput) {
-    reg = regInput.toUpperCase();
-    return reg;
-  }
+    regInput = regInput.replace(/\s+/g, '');
+    // the above is a regular expression to remove all whitespace.
+     var regUp = regInput.toUpperCase();
+     // CODE BELOW DOESNT WORK
+     // Return an array with values counted as collective.
+    // if (regUp.includes(",")) {
+    //   var regSplit = regUp.split(",");
+    //   for (var i = 0; i < regSplit.length; i++) {
+    //  reg.push(regSplit[i]);
+    //}
+    // }
+    //else {
+      reg = regUp;
+    //}
+      return reg;
+    }
   function capitalise(location_Input) {
     var lower = location_Input.toLowerCase();
-    location = lower.charAt(0).toUpperCase() + lower.slice(1);
+    if (lower.includes(" ")) {
+      var lowerSplit = lower.split(' ');
+      var caps = [];
+      for (var i = 0; i < lowerSplit.length; i++) {
+        caps.push((lowerSplit[i].charAt(0).toUpperCase() + lowerSplit[i].slice(1)));
+      }
+      location = caps.join(" ");
+    }
+    else {
+      location = lower.charAt(0).toUpperCase() + lower.slice(1);
+    }
       return location;
   }
   function storeNewMap() {

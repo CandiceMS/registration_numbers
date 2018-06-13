@@ -14,7 +14,6 @@ function filterLocation(e) {
   // console.log(targetEl);
   // console.log(elValue);
   var locationReg = holdMap[elValue];
-  console.log(locationReg);
   while (moreReg.hasChildNodes()) {
     moreReg.removeChild(moreReg.firstChild);
   }
