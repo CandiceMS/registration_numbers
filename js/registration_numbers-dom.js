@@ -15,17 +15,15 @@ function filterDisplay() {
 //display = map[key] values
 }
 function filterLocation(e) {
-  var filterLS = holdMap;
+//  var filterLS = holdMap;
   if (e) {
-  var targetEl =  e.target;
-  var elValue = targetEl.value;
+    var targetEl =  e.target;
+    var elValue = targetEl.value;
   console.log(targetEl);
   console.log(elValue);
-  console.log(filterLS);
-    // if (filterLS.includes(elValue)) {
-    //   var filVal = Object.values(filterLS);
-    //   console.log(filVal);
-    // }
+  var locationReg = holdMap[elValue];
+
+  console.log(locationReg);
   }
   }
 
