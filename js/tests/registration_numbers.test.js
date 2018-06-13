@@ -4,9 +4,15 @@ describe('Add Registration Numbers', function(){
       var displayOnly = AddRegistrations();
         assert.equal(displayOnly.regUpper('ca1234'), "CA1234");
     });
+    it('should accept registration input as a single OR multi-value string', function(){
+      var stringInput = AddRegistrations();
+      //  assert.deepEqual(stringInput.regUpper('ca1234, ca171,ca246'), ["CA1234", "CA171", "CA246"]);
+        assert.equal(stringInput.regUpper('ca909'), ["CA909"]);
+    });
     it('should capitalise the location regardless of input format', function(){
       var upper = AddRegistrations();
         assert.equal(upper.capitalise("george"), "George");
+        assert.equal(upper.capitalise("cAPe toWN"), "Cape Town");
     });
     it('should map the location and registration numbers entered, not repeating any.', function(){
       var addToMap = AddRegistrations();
