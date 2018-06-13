@@ -46,6 +46,10 @@ function AddRegistrations(storageMap) {
       }
     }
   }
+  function keyValues(map, location) {
+    var keyValue = map[location];
+    return keyValue;
+  }
   // NOTES:
     // Object.values(map);
 //changes map to an array, removes key name,
@@ -64,5 +68,6 @@ return {
     returnMap,
     returnLocation,
     regReturn,
+    keyValues
   }
 }

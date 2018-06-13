@@ -28,8 +28,12 @@ describe('Add Registration Numbers', function(){
 
       assert.deepEqual(locMap.returnLocation(), ["Earth", "Space"]);
     });
-    it('should return the values of keys in the map', function(){
+    it('should return the values of all keys in the map', function(){
       var mapVal = AddRegistrations();
-      assert.deepEqual(mapVal.regReturn({"Home": ["HM39", "HM93"]}), ['HM39', 'HM93']);    
+      assert.deepEqual(mapVal.regReturn({"Home": ["HM39", "HM93"]}), ['HM39', 'HM93']);
+    });
+    it('should return the values of a selected map key only', function(){
+      var valuesKey = AddRegistrations();
+      assert.deepEqual(valuesKey.keyValues({"Away": ["AW56", "AW67", "AW78"], "Far": ["FA34", "FA45"]}, "Away"), ["AW56", "AW67", "AW78"]);
     });
      });
