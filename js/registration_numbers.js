@@ -9,9 +9,7 @@ function AddRegistrations(storageMap) {
   function capitalise(location_Input) {
     var lower = location_Input.toLowerCase();
     location = lower.charAt(0).toUpperCase() + lower.slice(1);
-    //how to use a forEach()???
-    //how to avoid loop?
-    return location;
+      return location;
   }
   function storeNewMap() {
     if (storageMap) {
@@ -38,7 +36,7 @@ function AddRegistrations(storageMap) {
   }
   function returnLocation() {
     location = Object.keys(map);
-    return location;
+      return location;
   }
   function regReturn(map) {
     for (var key in map) {
@@ -47,9 +45,16 @@ function AddRegistrations(storageMap) {
         return reg;
       }
     }
-    // Object.values(map);
-    //Would this do the same thing?
   }
+  // NOTES:
+    // Object.values(map);
+//changes map to an array, removes key name,
+//assigns an index instead and returns values
+
+    // Object.is(param1, param2)
+//compares params to check if both are the
+//same value.
+//Returns a boolean value
 
 return {
     regUpper,

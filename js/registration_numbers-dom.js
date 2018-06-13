@@ -6,26 +6,16 @@ var locateBtn = document.querySelector('.locateBtn');
 var selectFilter = document.querySelector('.locationsAdd');
 var moreReg = document.querySelector('div[class="row divDisplay"]');
 
-function filterDisplay() {
-// js function to filter
-// no click event on child means parent event will be executed
-// parent event/function must be defined
-// parent event = grabs child value
-
-//display = map[key] values
-}
 function filterLocation(e) {
-//  var filterLS = holdMap;
   if (e) {
     var targetEl =  e.target;
     var elValue = targetEl.value;
-  console.log(targetEl);
-  console.log(elValue);
+  // console.log(targetEl);
+  // console.log(elValue);
   var locationReg = holdMap[elValue];
-
   console.log(locationReg);
   }
-  }
+}
 
 
 function add() {
@@ -52,9 +42,6 @@ function add() {
       createLI.appendChild(createItem);
       createItem.setAttribute("type", "button"), ("name", "location");
       createItem.value = keyArr[i];
-    //  createItem.addEventListener('click', filterLocation);
-      //   console.log();
-       // eventListener function to be added from .js function?
     }
 
   var valObj = addReg.returnMap(holdMap);
